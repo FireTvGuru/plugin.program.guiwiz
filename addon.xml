@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.guiwiz" name="[COLOR blue]-[COLOR orange]Vanilla GUI Wizard[COLOR yellow]-[/COLOR]" version="1.2.4" provider-name="[COLOR red]F[COLOR white]T[COLOR blue]G[/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Vanilla GUI Wizard</summary>
+    <description lang="en">In this wizard you will find the latest Vanilla GUI Wizard and Tools. Thanks whufclee at NaN, GUYS at TI, Brackets for the app installer!! RomanVM for the PyXBMCt libs. Fire TV Guru for the PyXBMCt layout  Also a very special Thanks to Surfacingx for the base code used in this add-on.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

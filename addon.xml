@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.guiwiz" name="[COLOR blue]-[COLOR orange]Vanilla GUI Wizard[COLOR yellow]-[/COLOR]" version="1.2.4" provider-name="[COLOR red]F[COLOR white]T[COLOR blue]G[/COLOR]">
+<addon id="plugin.program.guiwiz" name="[COLOR blue]-[COLOR orange]Vanilla GUI Wizard[COLOR yellow]-[/COLOR]" version="1.2.5" provider-name="[COLOR red]F[COLOR white]T[COLOR blue]G[/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

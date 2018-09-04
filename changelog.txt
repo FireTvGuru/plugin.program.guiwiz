@@ -1,3 +1,16 @@
+v1.2.5 - Beta
+-Added Zlib to correct kodi 18 not extracting zip
+-Change all mods to reflect this change: >17 import zlib- default, wizard and extract
+
+v1.2.4 - Beta
+-Lots of layout changes and put each catagory to its own module to quicken the load time
+
+v1.2.3 - Beta
+-Added PyXBMCt Layout
+-Changed default startup options to none
+
+####FTG MODS####
+
 v0.1.8-Beta 2
 -Added Skin type to addon installer that extracts to special://home/
 -Fixed SkinSwap issue in addon installer

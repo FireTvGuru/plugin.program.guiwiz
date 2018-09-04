@@ -58,6 +58,7 @@ from datetime import date, datetime, timedelta
 from urlparse import urljoin
 from resources.libs import extract, downloader, notify, debridit, traktit, allucit, loginit, net, skinSwitch, uploadLog, yt, speedtest, wizard as wiz, addonwindow as pyxbmct
 
+
 ADDON_ID         = uservar.ADDON_ID
 ADDONTITLE       = uservar.ADDONTITLE
 ADDON            = wiz.addonId(ADDON_ID)
@@ -153,7 +154,11 @@ AUTOFEQ          = int(float(AUTOFEQ)) if AUTOFEQ.isdigit() else 0
 TODAY            = date.today()
 TOMORROW         = TODAY + timedelta(days=1)
 THREEDAYS        = TODAY + timedelta(days=3)
-KODIV            = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
+KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
+if KODIV > 17:
+	from resources.libs import zfile as zipfile #FTG mod for Kodi 18
+else:
+	import zipfile
 MCNAME           = wiz.mediaCenter()
 EXCLUDES         = uservar.EXCLUDES
 CACHETEXT        = uservar.CACHETEXT
@@ -1806,12 +1811,8 @@ def buildWizard(name, type, theme=None, over=False):
 					wiz.swapSkins(gotoskin, "Theme Installer")
 					wiz.lookandFeelData('restore')
 				elif test == True:
-					wiz.lookandFeelData('save')
-					wiz.defaultSkin()
-					gotoskin = wiz.getS('defaultskin')
-					wiz.swapSkins(gotoskin, "Theme Installer")
-					#switch = wiz.swapSkins(gotoskin, 'Theme Install')
-					#if switch == False: return
+					switch = wiz.swapSkins(gotoskin, 'Theme Install')
+					if switch == False: return
 					wiz.lookandFeelData('restore')
 				else:
 					wiz.ebi("ReloadSkin()")

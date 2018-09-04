@@ -38,7 +38,7 @@
 		<setting id="path" type="folder" label="Choose Backup Storage Location" default=""/>
 		<setting id="rompath" type="folder" label="Choose Roms Extract Location Location" default=""/>
 		<setting type="lsep" label="Maintenance Options: "/>
-		<setting id="clearcache" type="bool" label="Clear Cache on Startup" default="false" enable="!eq(-1,false)"/>
+		<setting id="clearcache" type="bool" label="Clear Cache on Startup" default="false"/>
 		<setting type="lsep" label="Package Folder Limit" />
 		<setting id="filesize_alert" type="slider" label="Max Folder Size MB" default="200" range="25,25,500" option="int" />
 		<setting type="lsep" label="Thumbnails Folder Limit" />
@@ -164,7 +164,7 @@
 		<setting type="lsep" visible="!eq(-1,false)" label="Level 0: No Logging"/>
 		<setting type="lsep" visible="!eq(-2,false)" label="Level 1: Normal Logging"/>
 		<setting type="lsep" visible="!eq(-3,false)" label="Level 2: Full Logging"/>
-		<setting id="debuglevel" type="enum" label="What level would you like the wizard to log?" visible="!eq(-4,false)" enable="!eq(-1,false)" values="Level 0|Level 1|Level 2" default="2"/>
+		<setting id="debuglevel" type="enum" label="What level would you like the wizard to log?" visible="!eq(-4,false)" values="Level 0|Level 1|Level 2" default="2"/>
 		<setting id="wizardlog" type="bool" label="Enable Writing to Wizard.Log: " visible="!eq(-5,false)" enable="true" default="true"/>
 		<setting id="autocleanwiz" type="bool" label="Automatically Clean up Wizard.Log: " visible="!eq(-6,false)" enable="!eq(-1,false)" default="true"/>
 		<setting id="wizlogcleanby" type="enum" label="How would you like to clean up the log wizard?" visible="!eq(-1,false)" values="By Days|By Size|By Lines" default="1"/>

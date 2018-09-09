@@ -614,7 +614,7 @@ class ZipFile(object):
         self.mode = key = mode.replace('b', '')[0]
         self.pwd = None
         self._comment = ''
-        file = io.FileIO(file,'rb')
+        file = io.FileIO(file,mode)
         if isinstance(file, basestring):
             self._filePassed = 0
             self.filename = file

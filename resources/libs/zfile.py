@@ -590,6 +590,16 @@ class ZipExtFile(io.BufferedIOBase):
         finally:
             super(ZipExtFile, self).close()
 
+def platform():
+	if xbmc.getCondVisibility('system.platform.android'):             return 'android'
+	elif xbmc.getCondVisibility('system.platform.linux'):             return 'linux'
+	elif xbmc.getCondVisibility('system.platform.linux.Raspberrypi'): return 'linux'
+	elif xbmc.getCondVisibility('system.platform.windows'):           return 'windows'
+	elif xbmc.getCondVisibility('system.platform.osx'):               return 'osx'
+	elif xbmc.getCondVisibility('system.platform.atv2'):              return 'atv2'
+	elif xbmc.getCondVisibility('system.platform.ios'):               return 'ios'
+	elif xbmc.getCondVisibility('system.platform.darwin'):            return 'ios'
+
 class ZipFile(object):
     fp = None 
     def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=False):
@@ -614,13 +624,14 @@ class ZipFile(object):
         self.mode = key = mode.replace('b', '')[0]
         self.pwd = None
         self._comment = ''
-        file = io.FileIO(file,mode)
+                #FTG mod for Kodi 18
+        if platform() == 'android':
+            file = io.FileIO(file,mode)
         if isinstance(file, basestring):
             self._filePassed = 0
             self.filename = file
             modeDict = {'r' : 'rb', 'w': 'wb', 'a' : 'r+b'}
             try:
-                #FTG mod for Kodi 18
                 self.fp = open(file, modeDict[mode])
             except IOError:
                 if mode == 'a':

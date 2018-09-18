@@ -215,8 +215,8 @@ DEFAULTPLUGINS   = ['metadata.album.universal', 'metadata.artists.universal', 'm
 #FTG MOD##
 ROMPACK          = uservar.ROMPACK
 EMUAPKS          = uservar.EMUAPKS
-ROMLOC           = xbmc.translatePath(os.path.join('//storage//emulated//0//Download//roms',''))
-WROMLOC          = xbmc.translatePath(os.path.join('C:\\roms\\',''))
+ROMPATH          = ADDON.getSetting('rompath') if not ADDON.getSetting('rompath') == '' else 'special://home/'
+ROMLOC           = os.path.join(ROMPATH, 'Roms', '')
 try:
 	INSTALLMETHOD    = int(float(wiz.getS('installmethod')))
 except:
@@ -705,12 +705,8 @@ def UNZIPROM():
 	wiz.LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, ADDONTITLE), '[COLOR %s]Rom Pack Installed[/COLOR]' % COLOR2)
 	DP.close()
 def MKDIRS():
-	if wiz.platform() == 'android':
-		if not os.path.exists(ROMLOC): os.makedirs(ROMLOC)
-	elif wiz.platform() == 'windows':
-		if not os.path.exists(WROMLOC): os.makedirs(WROMLOC)
-	elif wiz.platform() == 'linux':
-		if not os.path.exists(WROMLOC): os.makedirs(WROMLOC)
+	if not os.path.exists(ROMLOC): os.makedirs(ROMLOC)
+		
 ####################################################################################
 def buildVideo(name):
 	if wiz.workingURL(BUILDFILE) == True:

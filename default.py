@@ -4825,7 +4825,7 @@ elif mode=='autoadvanced'   : notify.autoConfig2(); wiz.refresh()
 elif mode=='autoconfig'     : autoconfig()
 elif mode=='sswap'          : skinSwitch.popUPmenu()
 ### You have found my Lucky Charms !!
-MKDIRS()
+#MKDIRS()
 window.connect(pyxbmct.ACTION_NAV_BACK, window.close)
 window.doModal()
 del window
